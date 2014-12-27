@@ -53,7 +53,7 @@ int _RgbWheel = {
 
 vc_color_data vc_rgb_hsl(vc_color color);
 
-double vc_hue_rgb(double n1, double n2, double h);
+vc_color_data vc_hsl_rgb(vc_color color);
 
 double vc_hue_rgb(double n1, double n2, double h);
 
