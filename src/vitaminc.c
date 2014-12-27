@@ -121,4 +121,6 @@ vc_color vc_create_color(
     }
 
     color.a = a;
+
+    return color;
 }
