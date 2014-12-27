@@ -36,7 +36,7 @@ vitaminc.o: src/vitaminc.c
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) src/vitaminc.c
 
 test: libvitaminc.a libvitaminc.so
-	$(CC) $(CFLAGS) $(CPPFLAGS) -o libvitaminc-tests test/vitaminc_tests.c -lvitaminc -lcunit
+	$(CC) $(CFLAGS) $(CPPFLAGS) -o libvitaminc-tests test/vitaminc_tests.c -lvitaminc -lcunit -lm
 	./libvitaminc-tests
 
 .PHONY: install
