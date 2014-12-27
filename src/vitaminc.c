@@ -112,6 +112,16 @@ vc_color vc_complementary_color(vc_color color, VC_WHEEL_TYPE mode)
     return vc_create_color(h, s, l, VC_HSL, 1.0);
 }
 
+int vc_color_equals(vc_color color1, vc_color color2){
+    return color1.r == color2.r
+            && color1.g == color2.g
+            && color1.b == color2.b
+            && color1.h == color2.h
+            && color1.s == color2.s
+            && color1.l == color2.l
+            && color1.a == color2.a;
+}
+
 vc_color vc_create_color(
         double x,
         double y,

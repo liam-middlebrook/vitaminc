@@ -67,6 +67,8 @@ double vc_hue_ryb_rgb(double hue);
 
 vc_color vc_complementary_color(vc_color color, VC_WHEEL_TYPE mode);
 
+int vc_color_equals(vc_color color1, vc_color color2);
+
 vc_color vc_create_color(
                 double x,
                 double y,
