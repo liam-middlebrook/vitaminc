@@ -14,78 +14,10 @@
 # limitations under the License.
 */
 
-#include <stdarg.h>
 #include <math.h>
 
-#define VC_COLOR_FORMAT char
-#define VC_RGB 0
-#define VC_HSL 1
-
-typedef struct {
-	double r, g, b, h, s, l, a;
-} vc_color;
-
-typedef struct {
-	double x, y, z;
-} vc_color_data;
-
-int _RybWheel = {
-    0,  26,  52,
-   83, 120, 130,
-  141, 151, 162,
-  177, 190, 204,
-  218, 232, 246,
-  261, 275, 288,
-  303, 317, 330,
-  338, 345, 352,
-  360};
-
-int _RgbWheel = {
-    0,   8,  17,
-   26,  34,  41,
-   48,  54,  60,
-   81, 103, 123,
-  138, 155, 171,
-  187, 204, 219,
-  234, 251, 267,
-  282, 298, 329,
-  360};
-
-double vc_maxval(int count, ...){
-	va_list values;
-	int i;
-	double max;
-
-	va_start(values, count);
-
-	max = 0.0f;
-	for(i = 0; i < count; ++i)
-	{
-		double val = va_arg(values, int);
-		max = (max > val) ? max : val;
-	}
-	
-	va_end(values);
-	return max;
-}
-
-double vc_minval(int count, ...){
-	va_list values;
-	int i;
-	double min;
-
-	va_start(values, count);
-
-	min = 0.0f;
-	for(i = 0; i < count; ++i)
-	{
-		double val = va_arg(values, int);
-		min = (min < val) ? min : val;
-	}
-	
-	va_end(values);
-	return min;
-}
+#include "vitaminc.h"
+#include "util.h"
 
 vc_color_data vc_rgb_hsl(vc_color color){
 	double minVal = vc_minval(3, color.r, color.g, color.b);
