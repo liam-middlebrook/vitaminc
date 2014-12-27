@@ -13,7 +13,7 @@ void test_complementary_color(void){
 
     vc_color yellow = vc_complementary_color(red, VC_WHEEL_RYB);
 
-    CU_ASSERT(red == vc_complementary_color(yellow, VC_WHEEL_RYB));
+    CU_ASSERT(vc_color_equals(red, vc_complementary_color(yellow, VC_WHEEL_RYB)));
 }
 
 int main(){
