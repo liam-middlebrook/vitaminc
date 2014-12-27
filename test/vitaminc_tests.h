@@ -2,7 +2,7 @@
 #define _VITAMINC_TESTS_H_
 
 #include <CUnit/Basic.h>
-#include "vitamanc.h"
+#include "vitaminc.h"
 
 typedef struct {
     const char* name;
