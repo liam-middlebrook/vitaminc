@@ -21,6 +21,10 @@
 #define VC_RGB 0
 #define VC_HSL 1
 
+#define VC_WHEEL_TYPE char
+#define VC_WHEEL_RGB 20
+#define VC_WHEEL_RYB 21
+
 typedef struct {
         double r, g, b, h, s, l, a;
 } vc_color;
@@ -29,7 +33,7 @@ typedef struct {
         double x, y, z;
 } vc_color_data;
 
-int _RybWheel = {
+int _RybWheel[] = {
     0,  26,  52,
    83, 120, 130,
   141, 151, 162,
@@ -38,9 +42,9 @@ int _RybWheel = {
   261, 275, 288,
   303, 317, 330,
   338, 345, 352,
-  360};
+  360}; 
 
-int _RgbWheel = {
+int _RgbWheel[] = {
     0,   8,  17,
    26,  34,  41,
    48,  54,  60,
@@ -56,6 +60,12 @@ vc_color_data vc_rgb_hsl(vc_color color);
 vc_color_data vc_hsl_rgb(vc_color color);
 
 double vc_hue_rgb(double n1, double n2, double h);
+
+double vc_hue_rgb_ryb(double hue);
+
+double vc_hue_ryb_rgb(double hue);
+
+vc_color vc_complementary_color(vc_color color, VC_WHEEL_TYPE mode);
 
 vc_color vc_create_color(
                 double x,

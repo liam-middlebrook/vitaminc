@@ -85,6 +85,33 @@ vc_color_data vc_hsl_rgb(vc_color color){
             .z = b};
 }
 
+double vc_hue_rgb_ryb(double hue){
+    double d = fmod(hue, 15);
+    int i = hue / 15;
+    int x0 = _RybWheel[i];
+    int x1 = _RybWheel[i + 1];
+    return x0 + (x1 - x0) * d / 15.0;
+}
+
+double vc_hue_ryb_rgb(double hue){
+    double d = fmod(hue, 15);
+    int i = hue / 15;
+    int x0 = _RgbWheel[i];
+    int x1 = _RgbWheel[i + 1];
+    return x0 + (x1 - x0) * d / 15.0;
+}
+
+vc_color vc_complementary_color(vc_color color, VC_WHEEL_TYPE mode)
+{
+    double h = color.h, s = color.s, l = color.l;
+
+    if(mode == VC_WHEEL_RYB) h = vc_hue_rgb_ryb(h);
+    h = fmod((h + 180), 360);
+    if(mode == VC_WHEEL_RYB) h = vc_hue_ryb_rgb(h);
+
+    return vc_create_color(h, s, l, VC_HSL, 1.0);
+}
+
 vc_color vc_create_color(
         double x,
         double y,
