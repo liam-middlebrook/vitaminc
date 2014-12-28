@@ -184,9 +184,19 @@ vc_color vc_create_color(
             color.g = other_fmt.y;
             color.b = other_fmt.z;
         break;
+        default:
+            printf("Error: Invalid Color Type!\n");
     }
 
     color.a = a;
 
+    printf("Created new color (rgbhsla): %f %f %f %f %f %f %f\n",
+                    color.r,
+                    color.g,
+                    color.b,
+                    color.h,
+                    color.s,
+                    color.l,
+                    color.a);
     return color;
 }
