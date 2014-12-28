@@ -34,16 +34,26 @@ vc_color_data vc_rgb_hsl(vc_color color){
 
     double d = maxVal - minVal;
 
-    if( l < 0.5) s = d / (maxVal + minVal);
-    else s = d / (2.0 - maxVal - minVal);
+    if( l < 0.5){
+        s = d / (maxVal + minVal);
+    }
+    else{
+        s = d / (2.0 - maxVal - minVal);
+    }
 
     double dr = (maxVal - color.r) / d;
     double dg = (maxVal - color.g) / d;
     double db = (maxVal - color.b) / d;
 
-    if(color.r == maxVal) h = db - dg;
-    else if(color.g == maxVal) h = 2.0 + dr - db;
-    else h = 4.0 + dg - dr;
+    if(color.r == maxVal){
+        h = db - dg;
+    }
+    else if(color.g == maxVal){
+        h = 2.0 + dr - db;
+    }
+    else{
+        h = 4.0 + dg - dr;
+    }
 
     h = fmod((h * 360),360.0);
 
@@ -56,20 +66,33 @@ vc_color_data vc_rgb_hsl(vc_color color){
 double vc_hue_rgb(double n1, double n2, double h){
     
     h = fmod(h, 6.0);
-    if(h < 1.0) return n1 + ((n2 - n1) * h);
-    if(h < 3.0) return n2;
-    if(h < 4.0) return n1 + ((n2 - n1) * (4.0 - h));
+    if(h < 1.0){
+        return n1 + ((n2 - n1) * h);
+    }
+    if(h < 3.0){
+        return n2;
+    }
+    if(h < 4.0){
+        return n1 + ((n2 - n1) * (4.0 - h));
+    }
     return n1;
 }
 
 vc_color_data vc_hsl_rgb(vc_color color){
-    if(color.s == 0) return (vc_color_data){
-                    .x = 1,
-                    .y = 1,
-                    .z = 1};
+    if(color.s == 0){
+        return (vc_color_data){
+                .x = 1,
+                .y = 1,
+                .z = 1};
+    }
+
     double r, g, b, n1, n2;
-    if(color.l < 0.5) n2 = color.l * (1.0 + color.s);
-    else n2 = color.l + color.s - (color.l * color.s);
+    if(color.l < 0.5){
+        n2 = color.l * (1.0 + color.s);
+    }
+    else{
+        n2 = color.l + color.s - (color.l * color.s);
+    }
     
     n1 = (2.0 * color.l) - n2;
 
@@ -105,9 +128,15 @@ vc_color vc_complementary_color(vc_color color, VC_WHEEL_TYPE mode)
 {
     double h = color.h, s = color.s, l = color.l;
 
-    if(mode == VC_WHEEL_RYB) h = vc_hue_rgb_ryb(h);
+    if(mode == VC_WHEEL_RYB){
+        h = vc_hue_rgb_ryb(h);
+    }
+    
     h = fmod((h + 180), 360);
-    if(mode == VC_WHEEL_RYB) h = vc_hue_ryb_rgb(h);
+    
+    if(mode == VC_WHEEL_RYB){
+        h = vc_hue_ryb_rgb(h);
+    }
 
     return vc_create_color(h, s, l, VC_HSL, 1.0);
 }
