@@ -148,13 +148,21 @@ int tol(double x, double y)
 }
 
 int vc_color_equals(vc_color color1, vc_color color2){
+    printf("Checking color equality per component\n");
     return tol(color1.r, color2.r)
-            && tol(color1.g, color2.g)
-            && tol(color1.b, color2.b)
-            && tol(color1.h, color2.h)
-            && tol(color1.s, color2.s)
-            && tol(color1.l, color2.l)
-            && tol(color1.a, color2.a);
+        && printf("r\n")
+        && tol(color1.g, color2.g)
+        && printf("g\n")
+        && tol(color1.b, color2.b)
+        && printf("b\n")
+        && tol(color1.h, color2.h)
+        && printf("h\n")
+        && tol(color1.s, color2.s)
+        && printf("s\n")
+        && tol(color1.l, color2.l)
+        && printf("l\n")
+        && tol(color1.a, color2.a)
+        && printf("a\n");
 }
 
 vc_color vc_create_color(
