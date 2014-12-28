@@ -10,7 +10,7 @@ double vc_maxval(int count, ...){
         max = 0.0f;
         for(i = 0; i < count; ++i)
         {
-                double val = va_arg(values, int);
+                double val = va_arg(values, double);
                 max = (max > val) ? max : val;
         }
  
@@ -28,7 +28,7 @@ double vc_minval(int count, ...){
         min = 0.0f;
         for(i = 0; i < count; ++i)
         {
-                double val = va_arg(values, int);
+                double val = va_arg(values, double);
                 min = (min < val) ? min : val;
         }
  
