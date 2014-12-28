@@ -15,6 +15,7 @@
 */
 
 #include <math.h>
+#include <stdio.h>
 
 #include "vitaminc.h"
 #include "util.h"
@@ -55,7 +56,7 @@ vc_color_data vc_rgb_hsl(vc_color color){
         h = 4.0 + dg - dr;
     }
 
-    h = fmod((h * 360),360.0);
+    h = fmod((h * 60),360.0);
 
      return (vc_color_data){
              .x = h,
