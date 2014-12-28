@@ -149,6 +149,26 @@ int tol(double x, double y)
 
 int vc_color_equals(vc_color color1, vc_color color2){
     printf("Checking color equality per component\n");
+    
+      
+    printf("color1 (rgbhsla): %f %f %f %f %f %f %f\n",
+                     color1.r,
+                     color1.g,
+                     color1.b,
+                     color1.h,
+                     color1.s,
+                     color1.l,
+                     color1.a);
+     
+    printf("color2 (rgbhsla): %f %f %f %f %f %f %f\n",
+                     color2.r,
+                     color2.g,
+                     color2.b,
+                     color2.h,
+                     color2.s,
+                     color2.l,
+                     color2.a);
+    
     return tol(color1.r, color2.r)
         && printf("r\n")
         && tol(color1.g, color2.g)
