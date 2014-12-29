@@ -154,6 +154,17 @@ int vc_color_equals(vc_color color1, vc_color color2){
         && tol(color1.a, color2.a);
 }
 
+void vc_print(vc_color color){
+    printf("Printing Color:\nR: %f\nG: %f\nB: %f\nH: %f\nS: %f\nL: %f\nA: %f",
+                    color.r,
+                    color.g,
+                    color.b,
+                    color.h,
+                    color.s,
+                    color.l,
+                    color.a);
+}
+
 vc_color vc_create_color(
         double x,
         double y,

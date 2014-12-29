@@ -69,6 +69,8 @@ vc_color vc_complementary_color(vc_color color, VC_WHEEL_TYPE mode);
 
 int vc_color_equals(vc_color color1, vc_color color2);
 
+void vc_print(vc_color color);
+
 vc_color vc_create_color(
                 double x,
                 double y,
