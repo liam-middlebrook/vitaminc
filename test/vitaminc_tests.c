@@ -13,7 +13,7 @@ void test_complementary_color(void){
     vc_color red = vc_create_color(1.0, 0.0, 0.0, VC_RGB, 1.0);
     vc_color red_comp = vc_create_color(0.0, 1.0, 0.5, VC_HSL, 1.0);
     
-    CU_ASSERT(vc_color_equals(vc_complementary_color(red, VC_WHEEL_RGB), red2));
+    CU_ASSERT(vc_color_equals(vc_complementary_color(red, VC_WHEEL_RGB), red_comp));
 }
 
 int main(){
