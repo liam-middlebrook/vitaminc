@@ -143,9 +143,7 @@ vc_color vc_complementary_color(vc_color color, VC_WHEEL_TYPE mode)
 }
 
 int tol(double x, double y){
-    double diff = x - y;
-    diff *= (x < y) ? -1 : 1;
-    if(diff > 0.001)
+    if(fabs(x - y) > 0.001)
     {
             return 1;
     }
