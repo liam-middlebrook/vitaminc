@@ -20,6 +20,7 @@ void test_complementary_color(void){
     CU_ASSERT(vc_color_equals(vc_complementary_color(red, VC_WHEEL_RGB), red_comp));
 
     vc_print(red_comp);
+    vc_print(vc_complementary_color(red, VC_WHEEL_RGB), red_comp);
 }
 
 int main(){
