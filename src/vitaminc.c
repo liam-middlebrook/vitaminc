@@ -142,9 +142,12 @@ vc_color vc_complementary_color(vc_color color, VC_WHEEL_TYPE mode)
     return vc_create_color(h, s, l, VC_HSL, 1.0);
 }
 
-int tol(double x, double y)
-{
-    return abs(x - y) > 0.001;
+int tol(double x, double y){
+    if(abs(x - y) > 0.001)
+    {
+            return 1;
+    }
+    return 0;
 }
 
 int vc_color_equals(vc_color color1, vc_color color2){
