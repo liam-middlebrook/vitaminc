@@ -148,10 +148,14 @@ int tol(double x, double y)
 }
 
 int vc_color_equals(vc_color color1, vc_color color2){
-    return tol(color1.r, color2.r)
+    if(tol(color1.r, color2.r)
         && tol(color1.g, color2.g)
         && tol(color1.b, color2.b)
-        && tol(color1.a, color2.a);
+        && tol(color1.a, color2.a))
+    {
+            return 1;
+    }
+    return 0;
 }
 
 void vc_print(vc_color color){
