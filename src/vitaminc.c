@@ -148,6 +148,10 @@ int tol(double x, double y)
 }
 
 int vc_color_equals(vc_color color1, vc_color color2){
+    printf("Red Check: %d\n", tol(color1.r, color2.r));
+    printf("Green Check: %d\n", tol(color1.g, color2.g));
+    printf("Blue Check: %d\n", tol(color1.b, color2.b));
+    printf("Alpha Check: %d\n", tol(color1.a, color2.a));
     if(tol(color1.r, color2.r)
         && tol(color1.g, color2.g)
         && tol(color1.b, color2.b)
