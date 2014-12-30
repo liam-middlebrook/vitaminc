@@ -17,7 +17,7 @@ void test_complementary_color(void){
 
     //vc_print(red_comp);
 
-    red_comp = (vc_color_equals(vc_complementary_color(red, VC_WHEEL_RGB), red_comp));
+    red_comp = (vc_complementary_color(red, VC_WHEEL_RGB), red_comp);
 
     vc_print(red_comp);
 }
