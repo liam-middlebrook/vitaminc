@@ -16,7 +16,6 @@
 
 #include <math.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 #include "vitaminc.h"
 #include "util.h"
@@ -141,6 +140,11 @@ vc_color vc_complementary_color(vc_color color, VC_WHEEL_TYPE mode)
     }
 
     return vc_create_color(h, s, l, VC_HSL, 1.0);
+}
+
+double abs(double x, double y){
+    if (x < y) return y - x;
+    return x - y;
 }
 
 int tol(double x, double y){
