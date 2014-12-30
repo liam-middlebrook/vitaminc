@@ -12,15 +12,8 @@ int clean_color_tests(void){
 void test_complementary_color(void){
     vc_color red = vc_create_color(1.0, 0.0, 0.0, VC_RGB, 1.0);
     vc_color red_comp = vc_create_color(180.0, 1.0, 0.5, VC_HSL, 1.0);
-   
-    vc_print(red);
-
-    //vc_print(red_comp);
-
+    
     CU_ASSERT(vc_color_equals(vc_complementary_color(red, VC_WHEEL_RGB), red_comp));
-
-    vc_print(red_comp);
-    vc_print(vc_complementary_color(red, VC_WHEEL_RGB));
 }
 
 int main(){
