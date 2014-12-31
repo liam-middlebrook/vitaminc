@@ -12,6 +12,7 @@ typedef struct {
 int init_color_tests(void);
 int clean_color_tests(void);
 void test_complement(void);
+void test_rgb_hsl(void);
 
 static TestDef TESTS[] = {
         {"Test Complementary Color", test_complement},
