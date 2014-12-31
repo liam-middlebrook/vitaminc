@@ -16,6 +16,14 @@ void test_complement(void){
     CU_ASSERT(vc_color_equals(vc_complementary_color(red, VC_WHEEL_RGB), red_comp));
 }
 
+void test_rgb_hsl(void){
+
+    // Red (1, 0, 0)rgb - hsl(180, 1, 0.5)
+    vc_color red = vc_create_color(1.0, 0.0, 0.0, VC_RGB, 1.0);
+
+    CU_ASSERT(red.h == 180.0 && red.s = 1.0 && red.l = 0.5);
+}
+
 int main(){
     CU_pSuite pSuite = NULL;
 

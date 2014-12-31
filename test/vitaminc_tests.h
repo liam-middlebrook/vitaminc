@@ -14,8 +14,9 @@ int clean_color_tests(void);
 void test_complement(void);
 
 static TestDef TESTS[] = {
-        {"Test Complementary Color", test_complement}
+        {"Test Complementary Color", test_complement},
+        {"Test RGB to HSL", test_rgb_hsl}
 };
 
-static size_t NUMTESTS = 1;
+static size_t NUMTESTS = 2;
 #endif
