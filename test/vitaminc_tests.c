@@ -9,7 +9,7 @@ int clean_color_tests(void){
     return 0;
 }
 
-void test_complementary_color(void){
+void test_complement(void){
     vc_color red = vc_create_color(1.0, 0.0, 0.0, VC_RGB, 1.0);
     vc_color red_comp = vc_create_color(180.0, 1.0, 0.5, VC_HSL, 1.0);
     
@@ -29,9 +29,11 @@ int main(){
         return CU_get_error();
     }
 
-    if(NULL == CU_add_test(pSuite, "test of complementary colors", test_complementary_color)){
-        CU_cleanup_registry();
-        return CU_get_error();
+    for(size_t i = 0; i < NUMTESTS; ++i) {
+            if(NULL == CU_add_test(pSuite, TESTS[i].name, TESTS[i].func)) {
+                CU_cleanup_registry();
+                return CU_get_error();
+            }
     }
 
     CU_basic_set_mode(CU_BRM_VERBOSE);
