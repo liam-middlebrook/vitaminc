@@ -45,7 +45,7 @@ int main(){
     }
 
     CU_basic_set_mode(CU_BRM_VERBOSE);
-    int errCode = CU_basic_run_tests();
+    int errCode = CU_get_number_of_tests_failed();
     CU_cleanup_registry();
     return errCode;
 }
