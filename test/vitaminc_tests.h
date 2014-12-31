@@ -13,7 +13,7 @@ int init_color_tests(void);
 int clean_color_tests(void);
 void test_complement(void);
 
-static TestDef TESTS{} = {
+static TestDef TESTS[] = {
         {"Test Complementary Color", test_complement}
 };
 
