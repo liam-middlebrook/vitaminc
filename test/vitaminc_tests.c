@@ -21,7 +21,7 @@ void test_rgb_hsl(void){
     // Red (1, 0, 0)rgb - hsl(180, 1, 0.5)
     vc_color red = vc_create_color(1.0, 0.0, 0.0, VC_RGB, 1.0);
 
-    CU_ASSERT(vc_color_equals(vc_create_color(180, 1, 0.5, VC_HSL, 1.0), red);
+    CU_ASSERT(vc_color_equals(vc_create_color(180, 1, 0.5, VC_HSL, 1.0), red));
 }
 
 int main(){
